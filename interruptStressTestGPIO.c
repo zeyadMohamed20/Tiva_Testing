@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "tivaware/inc/tm4c123gh6pm.h"
+#include "tivaware/inc/hw_memmap.h"
 #include "tivaware/driverlib/sysctl.h"
 #include "tivaware/driverlib/gpio.h"
 
