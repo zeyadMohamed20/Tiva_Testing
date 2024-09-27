@@ -42,3 +42,25 @@ void interruptStressTestGPIO()
         GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_0, 0x00);
     }
 }
+
+
+// Interrupt handler function for GPIO Port F
+void GPIOPortFHandler(void)
+{
+    // Determine the interrupt source (which pin caused the interrupt)
+    uint32_t status = GPIOIntStatus(GPIO_PORTF_BASE, true);
+
+    // Clear the interrupt flag to prevent retriggering
+    GPIOIntClear(GPIO_PORTF_BASE, status);
+
+    // Handle the interrupt event, e.g., log the occurrence or toggle another GPIO
+    if (status & GPIO_PIN_0)
+    {
+        // Handle interrupt from PF0
+    }
+
+    if (status & GPIO_PIN_4)
+    {
+        // Handle interrupt from PF4
+    }
+}
