@@ -50,13 +50,12 @@ extern void _c_int00(void);
 extern uint32_t __STACK_TOP;
 
 //*****************************************************************************
-void SysTick_Handler(void);
-
 //
 // External declarations for the interrupt handlers used by the application.
 //
 //*****************************************************************************
 // To be added by user
+extern void SysTick_Handler(void);
 
 //*****************************************************************************
 //
@@ -84,7 +83,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Debug monitor handler
     0,                                      // Reserved
     IntDefaultHandler,                      // The PendSV handler
-    SysTick_Handler,                      // The SysTick handler
+    SysTick_Handler,                        // The SysTick handler
     IntDefaultHandler,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
