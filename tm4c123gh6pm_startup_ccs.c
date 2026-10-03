@@ -56,6 +56,7 @@ extern uint32_t __STACK_TOP;
 //*****************************************************************************
 // To be added by user
 extern void SysTick_Handler(void);
+extern void app_fault_handler(void);
 
 //*****************************************************************************
 //
@@ -256,12 +257,7 @@ ResetISR(void)
 static void
 NmiSR(void)
 {
-    //
-    // Enter an infinite loop.
-    //
-    while(1)
-    {
-    }
+    app_fault_handler();
 }
 
 //*****************************************************************************
@@ -274,12 +270,7 @@ NmiSR(void)
 static void
 FaultISR(void)
 {
-    //
-    // Enter an infinite loop.
-    //
-    while(1)
-    {
-    }
+    app_fault_handler();
 }
 
 //*****************************************************************************
@@ -292,10 +283,5 @@ FaultISR(void)
 static void
 IntDefaultHandler(void)
 {
-    //
-    // Go into an infinite loop.
-    //
-    while(1)
-    {
-    }
+    app_fault_handler();
 }
